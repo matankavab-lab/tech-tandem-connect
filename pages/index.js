@@ -1,0 +1,1 @@
+export default function Home(){return (<div style={{direction:'rtl',padding:24}}> <h1>TechTandem Export</h1><p>See /demo or /api endpoints.</p></div>)}

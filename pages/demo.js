@@ -1,0 +1,1 @@
+import {useEffect,useState} from 'react'; export default function Demo(){const [mentors,setMentors]=useState([]);useEffect(()=>{fetch('/api/mentors').then(r=>r.json()).then(setMentors)},[]);return (<div style={{direction:'rtl',padding:20}}><h2>דמו - מנטורים</h2><ul>{mentors.map(m=>(<li key={m.id}><strong>{m.name}</strong> — {m.expertise} — נק' {m.points}</li>))}</ul></div>)}

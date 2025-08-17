@@ -1,0 +1,47 @@
+
+datasource db {
+  provider = "mysql" // change to "mongodb" for MongoDB
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Mentor {
+  id        Int     @id @default(autoincrement())
+  name      String
+  expertise String
+  experience String
+  profilePic String?
+  points    Int     @default(0)
+}
+
+model Mentee {
+  id    Int @id @default(autoincrement())
+  name  String
+  goal  String
+  interests String?
+  profilePic String?
+}
+
+model Chat {
+  id        Int @id @default(autoincrement())
+  mentorId  Int
+  menteeId  Int
+  messages  String
+}
+
+model Meeting {
+  id Int @id
+  mentorId Int
+  menteeId Int
+  status String
+  scheduledAt DateTime
+}
+
+model Leaderboard {
+  id Int @id @default(autoincrement())
+  mentorId Int
+  points Int
+}

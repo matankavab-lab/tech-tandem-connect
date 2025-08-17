@@ -1,0 +1,22 @@
+﻿# Dependencies
+node_modules/
+npm-debug.log*
+
+# Production build
+.next/
+out/
+build/
+
+# Environment variables
+.env
+.env.local
+
+# Database
+*.db
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Package manager
+package-lock.json
